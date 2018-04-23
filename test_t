@@ -1,0 +1,35 @@
+# -*- mode: snippet -*-
+# name: test_t
+# key: test_t
+# --
+class ${1:test} extends ${2:uvm_test};
+    $0
+    ${3:env} m_$3;
+    ${4:vseq} m_$4;
+    ${5:vseqr} m_$5;
+    
+    \`uvm_component_utils($1)
+    
+    function new(string name, uvm_component parent);
+        super.new(name, parent);
+    endfunction // new
+    
+    function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+    endfunction // build_phase
+ 
+    function void connect_phase(uvm_phase phase);
+        super.connect_phase(phase);
+    endfunction // connect_phase
+    
+    task run_phase(uvm_phase phase);
+        $4 m_$4;
+        phase.raise_objection(this);
+        m_$4 = $4::type_id::create("m_$4", this);        
+        `uvm_info("$1", { "\n", m_$4.sprint() }, UVM_LOW)
+        m_$4.start($5);
+        #10ns ;
+        phase.drop_objection(this);
+   endtask: run_phase
+
+endclass // $1
