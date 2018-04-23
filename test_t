@@ -30,6 +30,6 @@ class ${1:test} extends ${2:uvm_test};
         m_$4.start($5);
         #10ns ;
         phase.drop_objection(this);
-   endtask: run_phase
+   endtask // run_phase
 
 endclass // $1
