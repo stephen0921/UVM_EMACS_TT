@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: infos_t
+# key: ii_t
+# --
+`uvm_info(get_type_name(), $sformatf("${1:it is %x}", ${2:var}), ${3:UVM_LOW})

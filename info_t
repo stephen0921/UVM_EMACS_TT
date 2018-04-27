@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: info_t
+# key: i_t
+# --
+`uvm_info(get_type_name(), "$1", ${2:UVM_LOW})
