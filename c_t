@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: c_t
+# key: c_t
+# --
+function void connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
+    $1
+endfunction // connect_phase

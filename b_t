@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: b_t
+# key: b_t
+# --
+function void build_phase(uvm_phase phase);
+  super.build_phase(phase);
+  $1
+endfunction // build_phase
